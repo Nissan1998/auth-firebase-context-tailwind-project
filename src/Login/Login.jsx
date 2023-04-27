@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { authContext } from "../Provider/AuthProvider";
 
 const Login = () => {
-  const { signIn } = useContext(authContext);
+  const { signIn, signInWithGoogle } = useContext(authContext);
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -67,6 +67,14 @@ const Login = () => {
                 Are you new Here? Click to Register
               </button>
             </Link>
+            <div>
+              <button
+                onClick={signInWithGoogle}
+                className="btn btn-primary ml-24 mb-2"
+              >
+                Google
+              </button>
+            </div>
           </div>
         </div>
       </div>
